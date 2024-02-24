@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>Catan C&amp;K</title>
+		<link rel="shortcut icon" href="../images/favicon-cak.png" />
+		
+		<!-- load scripts -->
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="../scripts/jquery.playSound.js"></script>
+		<script type="text/javascript" src="../scripts/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../scripts/catan.common.js"></script>
+		<script type="text/javascript" src="../scripts/catan.cak.js"></script>
+		<link rel="stylesheet" type="text/css" href="../scripts/catan.common.css" />
+		<link rel="stylesheet" type="text/css" href="../scripts/catan.cak.css" />
+		
+		<!-- enable fullscreen for ipad when user adds this page to their home screen -->
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
+	</head>
+	<body id="body">
+		<a id="buttonAudio" href="#" onclick="clickAudio();"><img id="imageAudio" /></a>
+		<a id="buttonFullScreen" href="#" onclick="clickFullScreen();"><img id="imageFullScreen" /></a>
+		<div class="fixed" id="header">
+			<select id="resolution" onchange="clickResolution();">
+				<option value="xga">1024x768</option>
+				<option value="hd">1280x720</option>
+				<option value="fhd">1920x1080</option>
+				<option value="qhd">2560x1440</option>
+				<option value="uhd">Highest</option>
+			</select>
+			<button onclick="clickNewGame();">New Game</button>
+			Catan C&amp;K - Turn <span id="currentTurn">0</span><span> </span>
+			<button id="buttonPriorTurn" onclick="clickPriorTurn();" disabled="disabled">Prior Turn</button>
+		</div>
+		<div class="fixed">
+			<hr />
+			<table>
+				<tr>
+					<th class="stats"></th>
+					<th class="stats" style="background:blue"></th>
+					<th class="stats" style="background:green"></th>
+					<th class="stats" style="background:yellow"></th>
+					<th class="stats" style="background:black"></th>
+					<th class="stats">2</th>
+					<th class="stats">3</th>
+					<th class="stats">4</th>
+					<th class="stats">5</th>
+					<th class="stats">6</th>
+					<th class="stats">7</th>
+					<th class="stats">8</th>
+					<th class="stats">9</th>
+					<th class="stats">10</th>
+					<th class="stats">11</th>
+					<th class="stats">12</th>
+				</tr>
+				<tr>
+					<th class="stats">Ct</th>
+					<td class="stats" id="stats-white-0"></td> <!-- blue castle -->
+					<td class="stats" id="stats-white-1"></td> <!-- green castle -->
+					<td class="stats" id="stats-white-2"></td> <!-- yellow castle -->
+					<td class="stats" id="stats-white-3"></td> <!-- barbarians -->
+					<td class="stats" id="stats-color-2"></td>
+					<td class="stats" id="stats-color-3"></td>
+					<td class="stats" id="stats-color-4"></td>
+					<td class="stats" id="stats-color-5"></td>
+					<td class="stats" id="stats-color-6"></td>
+					<td class="stats" id="stats-color-7"></td>
+					<td class="stats" id="stats-color-8"></td>
+					<td class="stats" id="stats-color-9"></td>
+					<td class="stats" id="stats-color-10"></td>
+					<td class="stats" id="stats-color-11"></td>
+					<td class="stats" id="stats-color-12"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="fixed" id="totalBox">|<span id="total"></span>|</div>
+		<div class="stretch">
+			<div class="spacer">|</div>
+			<div class="content"><a id="anchor-white-die" href="#">
+				<img class="die" id="white-die-blank" />
+				<img class="die" id="white-die" />
+			</a></div>
+			<div class="spacer">|</div>
+			<div class="content"><a id="anchor-red-die" href="#">
+				<img class="die" id="red-die-blank" />
+				<img class="die" id="red-die" />
+			</a></div>
+			<div class="spacer">|</div>
+			<div class="content"><a id="anchor-yellow-die" href="#">
+				<img class="die" id="yellow-die-blank" />
+				<img class="die" id="yellow-die" />
+			</a></div>
+			<div class="spacer">|</div>
+		</div>
+		<div class="fixed" id="messageBox">|<span id="message"></span>|</div>
+		<div class="fixed">
+		<table style="width:100%">
+			<tr>
+				<td class="barbarians">
+					<img id="barbarians-0" class="ship" />
+				</td>
+				<td class="barbarians">
+					<img id="barbarians-1" class="ship" style="display: none"/>
+				</td>
+				<td class="barbarians">
+					<img id="barbarians-2" class="ship" style="display: none"/>
+				</td>
+				<td class="barbarians">
+					<img id="barbarians-3" class="ship" style="display: none"/>
+				</td>
+				<td class="barbarians">
+					<img id="barbarians-4" class="ship" style="display: none"/>
+				</td>
+				<td class="barbarians">
+					<img id="barbarians-5" class="ship" style="display: none"/>
+				</td>
+				<td class="barbarians">
+					<img id="barbarians-6" class="ship" style="display: none"/>
+				</td>
+				<td class="barbarians">
+					<img id="barbarians-7" class="ship" style="display: none"/>
+				</td>
+			</tr>
+		</table>
+		</div>
+	</body>
+</html>

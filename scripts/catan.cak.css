@@ -1,0 +1,10 @@
+td.barbarians
+{
+	background-size: contain;
+	width: (100/8)%;
+}
+img.ship
+{
+	/* make sure the image doesn't exceed the parent's dimensions */
+	max-width: 100%;
+}

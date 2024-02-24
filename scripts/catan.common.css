@@ -1,0 +1,121 @@
+*
+{
+	margin:0;padding:0;	
+}
+html, body
+{
+	height:100%;
+	width:100%;
+	overflow-y: hidden; /* make sure vertical scrollbar never appears */
+	overflow-x: hidden; /* make sure horizontal scrollbar never appears */
+}
+body
+{
+	display: table;
+}
+button {
+	vertical-align: top;
+	font-size: 0.6em;
+	height: 1.9em;
+	width: 8em;
+}
+a{
+	color: inherit;
+	text-decoration: none;
+	z-index: 0;
+}
+.fixed
+{
+	background: #666;
+	color: #FFF;
+	font-size: 2em;
+	font-variant: small-caps;
+	font-family: garamond,georgia,serif;
+	font-weight: bold;
+	text-align: center;
+}
+.fixed, .stretch 
+{
+	width: 100%;
+	display: table-row;
+}
+.stretch
+{
+	background: black;
+	height: 100%;  
+}
+.spacer
+{
+	height: 100%;
+	width: 1%;
+	float:left;
+}
+.content
+{
+	height: 100%;
+	width: 32%;
+	float:left;
+	/* make child elements use this element for absolute positioning */
+	position: relative; 
+}
+.die
+{
+	/* center the image vertically */
+	position: absolute; 
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	/* make sure the image doesn't exceed the parent's dimensions */
+	max-width: 100%;
+	max-height: 100%;
+}
+table
+{
+	width: 100%;
+	/* make sure all columns are sized equally, regardless of contents */
+	table-layout:fixed;
+}
+th.stats, td.stats
+{
+	width: (100/16)%;
+	color:inherit;
+}
+th.stats
+{
+	font-size: 0.6em;
+}
+td.stats
+{
+	border: 1px solid black;
+	font-size: 0.5em;
+	font-weight: normal;
+}
+#messageBox, #totalBox
+{
+	background: black;
+	color: black;
+}
+#totalBox
+{
+	font-size: 6em;
+}
+#message, #total
+{
+	color: white;
+}
+#imageAudio, #imageFullScreen
+{
+	vertical-align:bottom;
+	position: absolute;
+	top: 0px;
+	right: 2px;
+}
+#resolution
+{
+	position:absolute;
+	left: 2px;
+	font-size: 0.6em;
+	margin: 0.2em 0em;
+}
